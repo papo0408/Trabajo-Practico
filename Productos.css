@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background:url(Fondo.jpg);
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #111827;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.site-header .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.site-header nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+    background: #1f2937;
+    color: #e8e2ec;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 1.5rem;
+    object-fit: cover;
+    min-height: 320px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    color: #ef4444;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    max-width: 540px;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 0.95rem 1.7rem;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #18316a;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.product-grid-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-grid-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #111827;
+    
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    background-size: cover;
+    background-position: center;
+    min-height: 220px;
+}
+
+.product-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.product-details h3 {
+    font-size: 1.35rem;
+}
+
+.product-details p {
+    color: #475569;
+    font-size: 0.98rem;
+}
+
+.price {
+    font-weight: 700;
+    color: #111827;
+    font-size: 1.15rem;
+}
+
+.product-details button {
+    margin-top: auto;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 0.95rem;
+    padding: 0.9rem 1rem;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.product-details button:hover {
+    transform: translateY(-2px);
+    background: #1d4ed8;
+}
+
+.info-section {
+    background: #111827;
+    color: #fff;
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    border-radius: 1.5rem;
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.info-section p {
+    color: #d1d5db;
+    max-width: 560px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    color: #6b7280;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
