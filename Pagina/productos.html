@@ -10,27 +10,73 @@
     <header class="site-header">
         <div class="logo">Mi Tienda</div>
         <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="productos.html" class="active">Productos</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#inicio" class="nav-link active" data-target="inicio">Inicio</a>
+            <a href="#productos" class="nav-link" data-target="productos">Productos</a>
+            <a href="#carrito" class="nav-link cart-link" data-target="carrito">🛒 Carrito <span class="cart-count hidden">0</span></a>
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="inicio" class="hero main-section">
         <div>
             <p class="eyebrow">Oferta Especial</p>
             <h1>Compra productos de calidad en línea</h1>
             <p>Encuentra lo mejor en tecnología, moda y hogar con envío rápido y seguro.</p>
-            <a class="btn-primary" href="#productos">Ver Productos</a>
+            <a class="btn-primary nav-link" href="#productos" data-target="productos">Ver Productos</a>
         </div>
         <img src="https://www.shutterstock.com/image-photo/young-curious-couple-two-friends-600nw-2631281249.jpg">
+        <div class="home-products-preview">
+            <div class="home-preview-header">
+                <h2>Algunos productos destacados</h2>
+                <p>Estos son algunos de los artículos más buscados por nuestros clientes.</p>
+            </div>
+            <div class="product-grid home-grid">
+                <article class="product-card">
+                    <div class="product-image" style="background-image:url('https://http2.mlstatic.com/D_612265-MLA103627124458_012026-C.jpg');">
+                        <img src="https://http2.mlstatic.com/D_612265-MLA103627124458_012026-C.jpg" alt="Audífonos inalámbricos">
+                    </div>
+                    <div class="product-details">
+                        <h3>Audífonos inalámbricos</h3>
+                        <p>Sonido claro y cancelación de ruido para escuchar con comodidad.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image" style="background-image:url('https://zenwaig.com.ar/wp-content/uploads/2021/07/sm111.jpg');">
+                        <img src="https://zenwaig.com.ar/wp-content/uploads/2021/07/sm111.jpg" alt="Reloj inteligente">
+                    </div>
+                    <div class="product-details">
+                        <h3>Reloj inteligente</h3>
+                        <p>Funciones de salud, notificaciones y diseño moderno.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image" style="background-image:url('https://www.compraypunto.com.ar/RewardCliente_BPN/images/Productos/Grandes/3_TL-00864-GR@-MOCHILA%20DE%20VIAJE%20EV%2022332%20GR_GDE.JPG');">
+                        <img src="https://www.compraypunto.com.ar/RewardCliente_BPN/images/Productos/Grandes/3_TL-00864-GR@-MOCHILA%20DE%20VIAJE%20EV%2022332%20GR_GDE.JPG" alt="Mochila urbana">
+                    </div>
+                    <div class="product-details">
+                        <h3>Mochila urbana</h3>
+                        <p>Compartimentos para laptop y material resistente al agua.</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image" style="background-image:url('https://www.decoactual.com/wp-content/uploads/2021/09/decora-la-oficina-.jpg.webp');">
+                        <img src="https://www.decoactual.com/wp-content/uploads/2021/09/decora-la-oficina-.jpg.webp" alt="Kit de escritorio">
+                    </div>
+                    <div class="product-details">
+                        <h3>Kit de escritorio</h3>
+                        <p>Escritorio ergonómico, lámpara LED y accesorios elegantes.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
 
-    <section id="productos" class="product-grid-section">
+    <section id="productos" class="product-grid-section main-section">
         <h2>Productos destacados</h2>
         <div class="product-grid">
             <article class="product-card">
-                <div class="product-image" style="background-image: url('https://http2.mlstatic.com/D_612265-MLA103627124458_012026-C.jpg');"></div>
+                <div class="product-image" style="background-image: url('https://http2.mlstatic.com/D_612265-MLA103627124458_012026-C.jpg');">
+                    <img src="https://http2.mlstatic.com/D_612265-MLA103627124458_012026-C.jpg" alt="Audífonos inalámbricos">
+                </div>
                 <div class="product-details">
                     <h3>Audífonos inalámbricos</h3>
                     <p>Sonido claro, cancelación de ruido y batería de larga duración.</p>
@@ -40,7 +86,9 @@
             </article>
 
             <article class="product-card">
-                <div class="product-image" style="background-image:url('https://zenwaig.com.ar/wp-content/uploads/2021/07/sm111.jpg');"></div>
+                <div class="product-image" style="background-image:url('https://zenwaig.com.ar/wp-content/uploads/2021/07/sm111.jpg');">
+                    <img src="https://zenwaig.com.ar/wp-content/uploads/2021/07/sm111.jpg" alt="Reloj inteligente">
+                </div>
                 <div class="product-details">
                     <h3>Reloj inteligente</h3>
                     <p>Funciones de salud, notificaciones y diseño moderno.</p>
@@ -50,7 +98,9 @@
             </article>
 
             <article class="product-card">
-                <div class="product-image" style="background-image:url('https://www.decoactual.com/wp-content/uploads/2021/09/decora-la-oficina-.jpg.webp');"></div>
+                <div class="product-image" style="background-image:url('https://www.decoactual.com/wp-content/uploads/2021/09/decora-la-oficina-.jpg.webp');">
+                    <img src="https://www.decoactual.com/wp-content/uploads/2021/09/decora-la-oficina-.jpg.webp" alt="Kit de escritorio">
+                </div>
                 <div class="product-details">
                     <h3>Kit de escritorio</h3>
                     <p>Escritorio ergonómico, lámpara LED y accesorios elegantes.</p>
@@ -60,24 +110,245 @@
             </article>
 
             <article class="product-card">
-                <div class="product-image" style="background-image: url('https://www.compraypunto.com.ar/RewardCliente_BPN/images/Productos/Grandes/3_TL-00864-GR@-MOCHILA%20DE%20VIAJE%20EV%2022332%20GR_GDE.JPG');"></div>
+                <div class="product-image" style="background-image: url('https://www.compraypunto.com.ar/RewardCliente_BPN/images/Productos/Grandes/3_TL-00864-GR@-MOCHILA%20DE%20VIAJE%20EV%2022332%20GR_GDE.JPG');">
+                    <img src="https://www.compraypunto.com.ar/RewardCliente_BPN/images/Productos/Grandes/3_TL-00864-GR@-MOCHILA%20DE%20VIAJE%20EV%2022332%20GR_GDE.JPG" alt="Mochila urbana">
+                </div>
                 <div class="product-details">
                     <h3>Mochila urbana</h3>
                     <p>Resistente al agua, compartimentos para laptop y diseño cómodo.</p>
                     <span class="price">$40,899</span>
                     <button>Agregar al carrito</button>
                 </div>
+
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://cdn.pixabay.com/photo/2014/05/02/21/50/cup-336116_1280.jpg');">
+                    <img src="https://rgregalos.b-cdn.net/wp-content/uploads/2025/01/Taza-termica-personalizada-600ml.jpg.webp" alt="Taza térmica">
+                </div>
+                <div class="product-details">
+                    <h3>Taza térmica</h3>
+                    <p>Mantiene tu bebida caliente por horas, diseño antideslizante.</p>
+                    <span class="price">$2,499</span>
+                    <button>Agregar al carrito</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/29/05/08/camera-1869269_1280.jpg');">
+                    <img src="https://m.media-amazon.com/images/I/71eGSztTW1L._AC_UF1000,1000_QL80_.jpg" alt="Cámara compacta">
+                </div>
+                <div class="product-details">
+                    <h3>Cámara compacta</h3>
+                    <p>Fotos nítidas, ideal para viajes y contenido en redes.</p>
+                    <span class="price">$54,750</span>
+                    <button>Agregar al carrito</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://cdn.pixabay.com/photo/2015/01/08/18/25/laptop-593673_1280.jpg');">
+                    <img src="https://i0.wp.com/ergomotionperu.com/wp-content/uploads/2024/10/Galeria-Soporte-para-laptop-de-aluminio-portable-5.jpg?fit=1000%2C1000&ssl=1" alt="Soporte para laptop">
+                </div>
+                <div class="product-details">
+                    <h3>Soporte para laptop</h3>
+                    <p>Ergonómico, mejora ventilación y postura al usar tu portátil.</p>
+                    <span class="price">$3,199</span>
+                    <button>Agregar al carrito</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://cdn.pixabay.com/photo/2017/08/06/22/01/plant-2596886_1280.jpg');">
+                    <img src="https://content.elmueble.com/medio/2026/01/08/ficus-elastica-ruby_1736be4e_260108192644_720x855.webp" alt="Planta de interior">
+                </div>
+                <div class="product-details">
+                    <h3>Planta de interior</h3>
+                    <p>Decorativa y de bajo mantenimiento, purifica el aire.</p>
+                    <span class="price">$1,599</span>
+                    <button>Agregar al carrito</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://cdn.pixabay.com/photo/2018/03/28/12/10/soap-3269037_1280.jpg');">
+                    <img src="https://i.pinimg.com/474x/34/38/76/3438765d65f318fe0bee7063793977fd.jpg" alt="Set de cuidado personal">
+                </div>
+                <div class="product-details">
+                    <h3>Set de cuidado personal</h3>
+                    <p>Incluye jabones artesanales y loción hidratante.</p>
+                    <span class="price">$1,250</span>
+                    <button>Agregar al carrito</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://cdn.pixabay.com/photo/2014/12/27/15/40/sofa-581645_1280.jpg');">
+                    <img src="https://i.pinimg.com/736x/01/94/22/0194229a9f1437bde86733948fc83dd6.jpg" alt="Cojín decorativo">
+                </div>
+                <div class="product-details">
+                    <h3>Cojín decorativo</h3>
+                    <p>Textura suave y relleno firme, combina con varios estilos.</p>
+                    <span class="price">$899</span>
+                    <button>Agregar al carrito</button>
+                </div>
             </article>
         </div>
     </section>
 
-    <section id="contacto" class="info-section">
+    <section id="carrito" class="product-grid-section main-section">
+        <div class="cart-header">
+            <h2>Carrito de compras</h2>
+            <p>Aquí verás los productos que seleccionaste.</p>
+        </div>
+        <div class="cart-panel">
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Total</span>
+                    <strong id="cart-total">$0</strong>
+                </div>
+                <button id="purchase-btn" class="btn-primary">Realizar compra</button>
+                <button id="clear-cart" class="btn-secondary">Vaciar carrito</button>
+            </div>
+        </div>
+        <p id="cart-empty" class="cart-empty">No hay productos en el carrito. Añade algo desde Productos.</p>
+    </section>
+
+    <section id="compra-realizada" class="product-grid-section main-section hidden">
+        <div class="purchase-success">
+            <h2>¡Compra realizada!</h2>
+            <p>Gracias por tu compra. Tu pedido ha sido confirmado.</p>
+            <div class="purchase-details">
+                <p id="purchase-message"></p>
+            </div>
+            <button id="back-to-products" class="btn-primary">Volver a productos</button>
+        </div>
+    </section>
+
+    <section id="contacto" class="info-section main-section">
         <div>
             <h2>¿Tienes dudas?</h2>
             <p>Escríbenos y te ayudamos a elegir el mejor producto según tus necesidades.</p>
         </div>
         <a class="btn-secondary" href="mailto:ventas@mitienda.com">Contactar</a>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.main-section');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const cartEmpty = document.getElementById('cart-empty');
+            const cartCount = document.querySelector('.cart-count');
+            const clearCart = document.getElementById('clear-cart');
+            const purchaseBtn = document.getElementById('purchase-btn');
+            const backToProducts = document.getElementById('back-to-products');
+            let cart = [];
+
+            function formatPrice(value) {
+                return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            }
+
+            function parsePrice(text) {
+                return Number(text.replace(/[^0-9]/g, '')) || 0;
+            }
+
+            function showSection(id) {
+                sections.forEach(section => {
+                    if (section.id === 'contacto') return; // No ocultar contacto
+                    section.classList.toggle('hidden', section.id !== id);
+                });
+                document.querySelectorAll('header nav .nav-link').forEach(link => {
+                    link.classList.toggle('active', link.dataset.target === id);
+                });
+            }
+
+            function renderCart() {
+                const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+                cartTotal.textContent = formatPrice(total);
+                cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+                cartCount.classList.toggle('hidden', cartCount.textContent === '0');
+                purchaseBtn.disabled = cart.length === 0;
+
+                if (!cart.length) {
+                    cartEmpty.classList.remove('hidden');
+                    cartItems.classList.add('hidden');
+                    cartTotal.parentElement.parentElement.classList.add('hidden');
+                    return;
+                }
+
+                cartEmpty.classList.add('hidden');
+                cartItems.classList.remove('hidden');
+                cartTotal.parentElement.parentElement.classList.remove('hidden');
+
+                cartItems.innerHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <div class="cart-item-image" style="background-image:url('${item.image}')"></div>
+                            <div>
+                                <h3>${item.name}</h3>
+                                <p>Cantidad: ${item.qty}</p>
+                                <span class="price">${formatPrice(item.price)}</span>
+                            </div>
+                        </div>
+                        <button class="btn-remove" data-index="${index}">Eliminar</button>
+                    </div>
+                `).join('');
+            }
+
+            document.body.addEventListener('click', function (event) {
+                if (event.target.matches('.nav-link')) {
+                    event.preventDefault();
+                    showSection(event.target.dataset.target);
+                }
+
+                if (event.target.matches('.product-card button')) {
+                    const card = event.target.closest('.product-card');
+                    const name = card.querySelector('h3').textContent;
+                    const price = parsePrice(card.querySelector('.price').textContent);
+                    const imageEl = card.querySelector('.product-image img');
+                    const image = imageEl ? imageEl.src : card.querySelector('.product-image').style.backgroundImage.slice(5, -2);
+                    const item = cart.find(product => product.name === name);
+
+                    if (item) item.qty += 1;
+                    else cart.push({ name, price, qty: 1, image });
+
+                    renderCart();
+                }
+
+                if (event.target.matches('.btn-remove')) {
+                    cart.splice(Number(event.target.dataset.index), 1);
+                    renderCart();
+                }
+            });
+
+            clearCart.addEventListener('click', function () {
+                cart = [];
+                renderCart();
+            });
+
+            purchaseBtn.addEventListener('click', function () {
+                if (cart.length === 0) return;
+                const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+                const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+                document.getElementById('purchase-message').innerHTML = `
+                    <p>Pedido de ${itemCount} producto(s) por un total de ${formatPrice(total)}</p>
+                    <p>Te contactaremos pronto para confirmar tu envío.</p>
+                `;
+                cart = [];
+                renderCart();
+                showSection('compra-realizada');
+            });
+
+            backToProducts.addEventListener('click', function () {
+                showSection('productos');
+            });
+
+            showSection(window.location.hash.replace('#', '') || 'inicio');
+            renderCart();
+        });
+    </script>
 
     <footer class="site-footer">
         <p>© 2026 Mi Tienda. Todos los derechos reservados.</p>
