@@ -23,6 +23,8 @@ body {
 .site-header .logo {
     font-size: 1.4rem;
     font-weight: 700;
+    color: #fff;
+    text-decoration: none;
 }
 
 .site-header nav {
@@ -144,24 +146,61 @@ body {
     background: #111827;
     border-top: 1px solid #1f2937;
     padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    min-height: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     margin-top: 3rem;
 }
 
 #contacto h2,
 #contacto p {
-    margin: 0;
+    margin: 0 0 1rem;
     color: #fff;
 }
 
-#contacto .btn-secondary {
-    padding: 0.9rem 1.5rem;
-    background: #e5e7eb;
-    color: #111827;
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #e5e7eb;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #374151;
+    border-radius: 0.75rem;
+    padding: 0.9rem 1rem;
+    background: #1f2937;
+    color: #f8fafc;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-success {
+    grid-column: 1 / -1;
+    background: #1f2937;
+    border: 1px solid #2563eb;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    color: #c7d2fe;
 }
 
 @media (max-width: 768px) {
