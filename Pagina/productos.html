@@ -269,13 +269,20 @@
                 return Number(text.replace(/[^0-9]/g, '')) || 0;
             }
 
+            function getBackgroundImageUrl(imageValue) {
+                return imageValue.replace(/^url\((['"]?)(.*)\1\)$/, '$2');
+            }
+
             function showSection(id) {
+                const validSections = ['inicio', 'productos', 'carrito', 'compra-realizada'];
+                const visibleSection = validSections.includes(id) ? id : 'inicio';
+
                 sections.forEach(section => {
-                    if (section.id === 'contacto') return; // No ocultar contacto
-                    section.classList.toggle('hidden', section.id !== id);
+                    if (section.id === 'contacto') return; // Mantener contacto visible en el pie de página
+                    section.classList.toggle('hidden', section.id !== visibleSection);
                 });
                 document.querySelectorAll('header nav .nav-link').forEach(link => {
-                    link.classList.toggle('active', link.dataset.target === id);
+                    link.classList.toggle('active', link.dataset.target === visibleSection);
                 });
             }
 
@@ -323,7 +330,8 @@
                     const name = card.querySelector('h3').textContent;
                     const price = parsePrice(card.querySelector('.price').textContent);
                     const imageEl = card.querySelector('.product-image img');
-                    const image = imageEl ? imageEl.src : card.querySelector('.product-image').style.backgroundImage.slice(5, -2);
+                    const backgroundImage = card.querySelector('.product-image').style.backgroundImage;
+                    const image = imageEl ? imageEl.src : getBackgroundImageUrl(backgroundImage);
                     const item = cart.find(product => product.name === name);
 
                     if (item) item.qty += 1;
