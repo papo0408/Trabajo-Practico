@@ -327,10 +327,13 @@
 
                 if (event.target.matches('.product-card button')) {
                     const card = event.target.closest('.product-card');
-                    const name = card.querySelector('h3').textContent;
-                    const price = parsePrice(card.querySelector('.price').textContent);
+                    const nameEl = card.querySelector('h3');
+                    const name = nameEl ? nameEl.textContent : 'Producto';
+                    const priceEl = card.querySelector('.price');
+                    const price = priceEl ? parsePrice(priceEl.textContent) : 0;
                     const imageEl = card.querySelector('.product-image img');
-                    const backgroundImage = card.querySelector('.product-image').style.backgroundImage;
+                    const productImageEl = card.querySelector('.product-image');
+                    const backgroundImage = productImageEl ? productImageEl.style.backgroundImage : '';
                     const image = imageEl ? imageEl.src : getBackgroundImageUrl(backgroundImage);
                     const item = cart.find(product => product.name === name);
 
@@ -346,39 +349,52 @@
                 }
             });
 
-            clearCart.addEventListener('click', function () {
-                cart = [];
-                renderCart();
-            });
+            if (clearCart) {
+                clearCart.addEventListener('click', function () {
+                    cart = [];
+                    renderCart();
+                });
+            }
 
-            purchaseBtn.addEventListener('click', function () {
-                if (cart.length === 0) return;
-                const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
-                const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
-                document.getElementById('purchase-message').innerHTML = `
-                    <p>Pedido de ${itemCount} producto(s) por un total de ${formatPrice(total)}</p>
-                    <p>Te contactaremos pronto para confirmar tu envío.</p>
-                `;
-                cart = [];
-                renderCart();
-                showSection('compra-realizada');
-            });
+            if (purchaseBtn) {
+                purchaseBtn.addEventListener('click', function () {
+                    if (cart.length === 0) return;
+                    const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+                    const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+                    const purchaseMessageEl = document.getElementById('purchase-message');
+                    if (purchaseMessageEl) {
+                        purchaseMessageEl.innerHTML = `
+                            <p>Pedido de ${itemCount} producto(s) por un total de ${formatPrice(total)}</p>
+                            <p>Te contactaremos pronto para confirmar tu envío.</p>
+                        `;
+                    }
+                    cart = [];
+                    renderCart();
+                    showSection('compra-realizada');
+                });
+            }
 
-            backToProducts.addEventListener('click', function () {
-                showSection('productos');
-            });
+            if (backToProducts) {
+                backToProducts.addEventListener('click', function () {
+                    showSection('productos');
+                });
+            }
 
             const contactForm = document.getElementById('contact-form');
             const contactSuccess = document.getElementById('contact-success');
 
-            contactForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-                const name = document.getElementById('contact-name').value.trim();
-                const email = document.getElementById('contact-email').value.trim();
-                contactSuccess.textContent = `Gracias ${name}. Recibimos tu mensaje y te escribiremos a ${email} pronto.`;
-                contactSuccess.classList.remove('hidden');
-                contactForm.reset();
-            });
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    const name = (document.getElementById('contact-name') || {}).value ? document.getElementById('contact-name').value.trim() : '';
+                    const email = (document.getElementById('contact-email') || {}).value ? document.getElementById('contact-email').value.trim() : '';
+                    if (contactSuccess) {
+                        contactSuccess.textContent = `Gracias ${name}. Recibimos tu mensaje y te escribiremos a ${email} pronto.`;
+                        contactSuccess.classList.remove('hidden');
+                    }
+                    contactForm.reset();
+                });
+            }
 
             showSection(window.location.hash.replace('#', '') || 'inicio');
             renderCart();
